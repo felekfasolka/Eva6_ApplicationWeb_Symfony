@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Mission detail: {{ mission }}{% endblock %}
+
+{% block body %}
+    <h4 class="mb-40">Details for:</h4>
+    <h2 class="mb-5">{{ mission }} alias {{ mission.codeName }}</h2>
+
+    <div class="row">
+        <div class="col-12 col-lg-8">
+
+                    <div class="shadow border rounded-lg p-3 mb-4">
+
+                        <div class="body">
+                            <h4 class="font-weight-light mb-10">
+                                Status: {{ mission.missionStatus }}
+                            </h4>
+                            <h6 class="font-weight-light mb-10">
+                                Type: {{ mission.missionType }}
+                            </h6>
+
+                            <div class="mb-2">
+                                <small class="text-muted text-uppercase">
+                                    Description:<br>{{ mission.description }}
+                                </small>
+                            </div>
+
+                            <div class="comment-text">
+                                Country: {{ mission.country }}
+                            </div>
+
+                            <div class="comment-text">
+                                Start date: {{ mission.startDate|format_datetime('medium', 'short') }}
+                            </div>
+
+                            <div class="comment-text">
+                                End date: {{ mission.endDate|format_datetime('medium', 'short') }}
+                            </div>
+                        </div>
+                    </div>
+        </div>
+        <div class="col-12 col-lg-4">
+            <a href="{{ path('homepage')}}" class="btn btn-outline-secondary"  role="button">Back to home</a>
+        </div>
+    </div>
+{% endblock %}
