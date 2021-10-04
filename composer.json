@@ -56,7 +56,8 @@
         "auto-scripts": {
             "cache:clear": "symfony-cmd",
             "assets:install %PUBLIC_DIR%": "symfony-cmd",
-            "requirements-checker": "script"
+            "requirements-checker": "script",
+            "postinstall": "encore production --progress"
         },
         "post-install-cmd": [
             "@auto-scripts"
