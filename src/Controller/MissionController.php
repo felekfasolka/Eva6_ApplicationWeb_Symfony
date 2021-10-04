@@ -17,11 +17,8 @@ class MissionController extends AbstractController
      */
     public function index(Request $request, Environment $twig, MissionRepository $missionRepository): Response
     {
-        $words = ['sky', 'cloud', 'wood', 'rock', 'forest',
-            'mountain', 'breeze'];
         return new Response($twig->render('mission/index.html.twig', [
-            'missions' => $missionRepository->findAll(),
-            'words' => $words
+            'missions' => $missionRepository->findAll()
         ]));
     }
 

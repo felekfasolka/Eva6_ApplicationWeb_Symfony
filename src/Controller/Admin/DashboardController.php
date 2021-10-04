@@ -34,20 +34,20 @@ class DashboardController extends AbstractDashboardController
     public function configureDashboard(): Dashboard
     {
         return Dashboard::new()
-            ->setTitle('MissionApp');
+            ->setTitle('MissionReport Backend');
     }
 
     public function configureMenuItems(): iterable
     {
+        yield MenuItem::linkToRoute('Back to Home', 'fa fa-home', 'homepage');
         yield MenuItem::linkToCrud('Missions', 'fab fa-old-republic', Mission::class);
         yield MenuItem::linkToCrud('Mission types', 'fab fa-old-republic', MissionType::class);
         yield MenuItem::linkToCrud('Mission status', 'fab fa-old-republic', MissionStatus::class);
-        yield MenuItem::linkToCrud('Agents Specialities', 'fab fa-old-republic', Speciality::class);
-        yield MenuItem::linkToCrud('Agents', 'fab fa-old-republic', Agent::class);
-        yield MenuItem::linkToCrud('Targets', 'fab fa-old-republic', Target::class);
-        yield MenuItem::linkToCrud('Contacts', 'fab fa-old-republic', Contact::class);
-        yield MenuItem::linkToCrud('Safe Houses', 'fab fa-old-republic', SafeHouse::class);
-        // yield MenuItem::linktoDashboard('Dashboard', 'fa fa-home');
+        yield MenuItem::linkToCrud('Agents', 'fas fa-user-shield', Agent::class);
+        yield MenuItem::linkToCrud('Agents Specialities', 'fas fa-user-shield', Speciality::class);
+        yield MenuItem::linkToCrud('Targets', 'fas fa-bullseye', Target::class);
+        yield MenuItem::linkToCrud('Contacts', 'far fa-id-badge', Contact::class);
+        yield MenuItem::linkToCrud('Safe Houses', 'fas fa-house-user', SafeHouse::class);
         // yield MenuItem::linkToCrud('The Label', 'fas fa-list', EntityClass::class);
     }
 }
