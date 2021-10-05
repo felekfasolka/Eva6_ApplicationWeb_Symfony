@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\TargetRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,7 +44,8 @@ class Target
     private $nationality;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Mission::class, inversedBy="targets")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity=Mission::class, inversedBy="targets")
      */
     private $mission;
 

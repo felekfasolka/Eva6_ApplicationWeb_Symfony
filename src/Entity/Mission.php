@@ -50,17 +50,20 @@ class Mission
     private $endDate;
 
     /**
-     * @ORM\OneToMany(targetEntity=Agent::class, mappedBy="mission")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity=Agent::class, mappedBy="mission", cascade={"all"})
      */
     private $agents;
 
     /**
-     * @ORM\OneToMany(targetEntity=Target::class, mappedBy="mission")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity=Target::class, mappedBy="mission", cascade={"all"})
      */
     private $targets;
 
     /**
-     * @ORM\OneToMany(targetEntity=Contact::class, mappedBy="mission")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity=Contact::class, mappedBy="mission", cascade={"all"})
      */
     private $contacts;
 
@@ -77,12 +80,14 @@ class Mission
     private $missionStatus;
 
     /**
-     * @ORM\ManyToMany(targetEntity=Speciality::class, inversedBy="missions")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity=Speciality::class, inversedBy="missions", cascade={"all"})
      */
     private $specialities;
 
     /**
-     * @ORM\ManyToMany(targetEntity=SafeHouse::class, mappedBy="missions")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity=SafeHouse::class, mappedBy="missions", cascade={"all"})
      */
     private $safeHouses;
 

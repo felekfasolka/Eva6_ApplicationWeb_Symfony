@@ -3,6 +3,7 @@
 namespace App\Entity;
 
 use App\Repository\ContactRepository;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -43,7 +44,8 @@ class Contact
     private $nationality;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Mission::class, inversedBy="contacts")
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity=Mission::class, inversedBy="contacts")
      */
     private $mission;
 

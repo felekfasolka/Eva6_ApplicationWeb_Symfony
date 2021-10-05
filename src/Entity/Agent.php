@@ -45,11 +45,13 @@ class Agent
     private $nationality;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Mission::class, inversedBy="agents")
+     * @var ArrayCollection
+     * @ORM\ManyToMany (targetEntity=Mission::class, inversedBy="agents")
      */
     private $mission;
 
     /**
+     * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity=Speciality::class, mappedBy="agents")
      */
     private $specialities;

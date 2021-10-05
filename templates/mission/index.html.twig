@@ -3,7 +3,6 @@
 {% block title %}Mission Overview{% endblock %}
 
 {% block body %}
-
     <h3 class="mb-5">There are {{ missions|length }} Missions reported</h3>
 
     {% for row in missions|batch(4) %}
